@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joco Taxi - Wallet Ready</title>
+    <title>Joco Taxi Service</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
+        }
+        
+        body {
             background: #1a1a1a;
             color: white;
+            text-align: center;
+            padding: 20px;
         }
         
         .card {
-            background: linear-gradient(145deg, #FED500, #FFA500);
+            background: #FED500;
             border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            border: 8px solid #000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 30px;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 5px solid #000;
         }
         
-        .logo {
-            font-size: 36px;
-            font-weight: bold;
+        h1 {
             color: #000;
-            margin: 10px 0;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
         
-        .name {
-            font-size: 28px;
-            font-weight: bold;
-            color: #000;
-            margin: 15px 0;
+        .subtitle {
+            color: #333;
+            margin-bottom: 20px;
         }
         
-        .contact-box {
+        .contact-info {
             background: #000;
             color: #FED500;
             padding: 20px;
@@ -50,34 +52,24 @@
             font-size: 18px;
         }
         
-        .contact-item a {
-            color: #FED500;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            background: rgba(254, 213, 0, 0.1);
-            border-radius: 10px;
-        }
-        
-        .qr-container {
+        .qr-box {
             background: white;
-            padding: 15px;
+            padding: 20px;
             border-radius: 15px;
             display: inline-block;
             margin: 20px 0;
-            border: 3px solid #000;
         }
         
         .wallet-button {
             display: block;
             background: #000;
             color: #FED500;
-            padding: 18px;
-            margin: 15px 0;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 15px;
             text-decoration: none;
+            font-size: 20px;
             font-weight: bold;
-            font-size: 18px;
             border: 3px solid #FED500;
         }
         
@@ -86,73 +78,48 @@
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
-            font-size: 14px;
             text-align: left;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="logo">🚕 JOCO TAXI</div>
-        <div class="name">Joco Joev</div>
+        <h1>🚕 JOCO TAXI</h1>
+        <p class="subtitle">Fast • Safe • 24/7</p>
         
-        <div class="contact-box">
+        <div class="contact-info">
             <div class="contact-item">
-                <a href="tel:+3891223346888">📞 CALL: +389 1223 346 888</a>
+                <strong>Joco Joev</strong><br>
+                Professional Driver
             </div>
             <div class="contact-item">
-                <a href="mailto:joco@joco.ch">✉️ EMAIL: joco@joco.ch</a>
-            </div>
-            <div class="contact-item">
-                24/7 TAXI SERVICE • FAST & RELIABLE
+                📞 +389 1223 346 888<br>
+                ✉️ joco@joco.ch
             </div>
         </div>
         
-        <div class="qr-container">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=JTVCJTIyUEMlMjIlMkMlN0IlMjJuYW1lJTIyJTNBJTIySm9jbyUyMEpvZXYlMjIlMkMlMjJvcmdhbml6YXRpb24lMjIlM0ElMjJKb2NvJTIwRXhwcmVzcyUyMFRheGklMjIlMkMlMjJ0aXRsZSUyMiUzQSUyMlByb2Zlc3Npb25hbCUyMERyaXZlciUyMiUyQyUyMnRlbCVMjIlM0ElMjIlMkIzODklMjAxMjIzJTIwMzQ2JTIwODg4JTIyJTJDJTIyZW1haWwlMjIlM0ElMjJqb2NvJTQwam9jby5jaCUyMiUyQyUyMnVybCUyMiUzQSUyMmh0dHBzJTNBJTJGJTJGaGloZWxsby5tZSUyRnAlMkZqb2NvdGF4aSUyMiU3RCU1RA==&format=png&margin=0&color=000&bgcolor=FED500" 
-                 alt="QR Code" width="180" height="180">
-            <p style="color: black; margin-top: 10px;">Scan for contact</p>
+        <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=CONTACTINFO" 
+                 alt="Scan to save contact" width="200" height="200">
+            <p style="color: black; margin-top: 10px;">Scan QR to save contact</p>
         </div>
         
-        <!-- КОПЧЕ ЗА WALLET СО ПРАВИЛЕН ПАТЕКА -->
-        <a href="joco-taxi.pkpass" class="wallet-button" id="walletBtn">
+        <!-- ВАЖНО: Ова е копчето за Apple Wallet -->
+        <a href="https://walleto.joco-taxi.com" class="wallet-button">
             🍎 Add to Apple Wallet
         </a>
         
-        <!-- Алтернативен линк за директно преземање -->
-        <a href="https://drive.google.com/uc?export=download&id=1EXAMPLE" class="wallet-button" style="background: #333;">
-            ⬇️ Download .pkpass File
-        </a>
-        
         <div class="instructions">
-            <strong>For Apple Wallet:</strong>
-            1. Click "Download .pkpass File"<br>
-            2. Open the downloaded file on iPhone<br>
-            3. iPhone will ask "Add to Wallet?"<br>
-            4. Click "Add"<br>
-            5. Done! Card is now in Wallet app
+            <h3>📱 How to add to Apple Wallet:</h3>
+            <ol>
+                <li>Click the yellow "Add to Apple Wallet" button</li>
+                <li>iPhone will open a new page</li>
+                <li>Click "Download .pkpass file"</li>
+                <li>iPhone will ask: "Add to Wallet?"</li>
+                <li>Click "Add"</li>
+                <li>Done! Card is now in your Wallet app</li>
+            </ol>
         </div>
     </div>
-
-    <script>
-        // Провери дали корисникот е на iPhone
-        function isiPhone() {
-            return /iPhone|iPod/.test(navigator.userAgent);
-        }
-        
-        // Ако е на iPhone, прикажи посебни инструкции
-        if (isiPhone()) {
-            document.getElementById('walletBtn').innerHTML = '📱 Tap to Add to Apple Wallet';
-            document.getElementById('walletBtn').style.background = '#007AFF';
-        }
-        
-        // Копче за генерирање на пасош онлајн
-        document.getElementById('walletBtn').addEventListener('click', function(e) {
-            if (!isiPhone()) {
-                e.preventDefault();
-                alert('For Apple Wallet:\n1. Open this page on iPhone\n2. Download the .pkpass file\n3. Open it on iPhone\n4. Click "Add to Wallet"');
-            }
-        });
-    </script>
 </body>
 </html>
