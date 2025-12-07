@@ -3,354 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joco Express Taxi Service</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Joco Taxi - Wallet Ready</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
         body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .taxi-card {
-            background: linear-gradient(145deg, #FED500 0%, #FFA500 100%);
-            border-radius: 25px;
-            width: 100%;
+            font-family: Arial, sans-serif;
             max-width: 400px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            overflow: hidden;
-            border: 8px solid #000;
-            position: relative;
-        }
-        
-        .taxi-header {
-            background: #000;
-            padding: 25px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .taxi-icon {
-            font-size: 50px;
-            color: #FED500;
-            margin-bottom: 10px;
-            animation: bounce 2s infinite;
-        }
-        
-        .company-name {
-            font-size: 28px;
-            font-weight: 800;
-            color: #FED500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        
-        .tagline {
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
             color: white;
-            font-size: 14px;
-            margin-top: 5px;
-            opacity: 0.9;
         }
         
-        .profile-section {
-            padding: 30px;
-            text-align: center;
-            background: rgba(0,0,0,0.85);
-        }
-        
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 5px solid #FED500;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            background: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            color: #FED500;
-        }
-        
-        .driver-name {
-            font-size: 32px;
-            font-weight: 700;
-            color: #FED500;
-            margin-bottom: 5px;
-        }
-        
-        .driver-title {
-            font-size: 18px;
-            color: #ccc;
-            margin-bottom: 25px;
-        }
-        
-        .contact-info {
-            background: #111;
+        .card {
+            background: linear-gradient(145deg, #FED500, #FFA500);
+            border-radius: 20px;
             padding: 25px;
-            border-top: 3px solid #FED500;
+            text-align: center;
+            border: 8px solid #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            margin: 10px 0;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            margin: 15px 0;
+        }
+        
+        .contact-box {
+            background: #000;
+            color: #FED500;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
         }
         
         .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 12px;
-            background: rgba(254, 213, 0, 0.1);
-            border-radius: 12px;
-            transition: transform 0.3s, background 0.3s;
-        }
-        
-        .contact-item:hover {
-            transform: translateX(5px);
-            background: rgba(254, 213, 0, 0.2);
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: #FED500;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: #000;
-            font-size: 22px;
-        }
-        
-        .contact-details h3 {
-            font-size: 16px;
-            color: #aaa;
-            margin-bottom: 5px;
-        }
-        
-        .contact-details p {
+            margin: 15px 0;
             font-size: 18px;
-            font-weight: 600;
-            color: white;
         }
         
-        .action-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            padding: 25px;
-            background: #000;
-        }
-        
-        .btn {
-            padding: 16px;
-            border-radius: 12px;
-            border: none;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        
-        .btn-call {
-            background: #FED500;
-            color: #000;
-        }
-        
-        .btn-call:hover {
-            background: #FFC400;
-            transform: translateY(-3px);
-        }
-        
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-        
-        .btn-whatsapp:hover {
-            background: #1DA851;
-            transform: translateY(-3px);
-        }
-        
-        .qr-section {
-            padding: 25px;
-            background: #111;
-            text-align: center;
-            border-top: 2px dashed #FED500;
-        }
-        
-        .qr-title {
+        .contact-item a {
             color: #FED500;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        
-        .qr-code {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto;
-            background: white;
+            text-decoration: none;
+            display: block;
             padding: 10px;
-            border-radius: 15px;
-            border: 3px solid #FED500;
+            background: rgba(254, 213, 0, 0.1);
+            border-radius: 10px;
         }
         
-        .qr-instruction {
-            margin-top: 15px;
-            color: #aaa;
-            font-size: 14px;
+        .qr-container {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 20px 0;
+            border: 3px solid #000;
         }
         
         .wallet-button {
-            margin-top: 20px;
+            display: block;
             background: #000;
             color: #FED500;
-            border: 2px solid #FED500;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 3px solid #FED500;
         }
         
-        .wallet-button:hover {
-            background: #FED500;
-            color: #000;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .taxi-stripe {
-            height: 10px;
-            background: repeating-linear-gradient(
-                90deg,
-                #000,
-                #000 20px,
-                #FED500 20px,
-                #FED500 40px
-            );
-        }
-        
-        @media (max-width: 480px) {
-            .taxi-card {
-                border-radius: 20px;
-            }
-            
-            .driver-name {
-                font-size: 28px;
-            }
-            
-            .action-buttons {
-                grid-template-columns: 1fr;
-            }
+        .instructions {
+            background: #333;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <div class="taxi-card">
-        <div class="taxi-header">
-            <div class="taxi-icon">
-                <i class="fas fa-taxi"></i>
-            </div>
-            <h1 class="company-name">Joco Express</h1>
-            <p class="tagline">Fast • Safe • Reliable • 24/7 Service</p>
-        </div>
+    <div class="card">
+        <div class="logo">🚕 JOCO TAXI</div>
+        <div class="name">Joco Joev</div>
         
-        <div class="taxi-stripe"></div>
-        
-        <div class="profile-section">
-            <div class="profile-image">
-                <i class="fas fa-user"></i>
-            </div>
-            <h2 class="driver-name">Joco Joev</h2>
-            <p class="driver-title">Professional Taxi Driver & Dispatcher</p>
-        </div>
-        
-        <div class="contact-info">
+        <div class="contact-box">
             <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>Call Now</h3>
-                    <p>+389 1223 346 888</p>
-                </div>
+                <a href="tel:+3891223346888">📞 CALL: +389 1223 346 888</a>
             </div>
-            
             <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>Email</h3>
-                    <p>joco@joco.ch</p>
-                </div>
+                <a href="mailto:joco@joco.ch">✉️ EMAIL: joco@joco.ch</a>
             </div>
-            
             <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>Working Hours</h3>
-                    <p>24 Hours / 7 Days</p>
-                </div>
+                24/7 TAXI SERVICE • FAST & RELIABLE
             </div>
         </div>
         
-        <div class="action-buttons">
-            <a href="tel:+3891223346888" class="btn btn-call">
-                <i class="fas fa-phone"></i> Call Now
-            </a>
-            <a href="https://wa.me/3891223346888" class="btn btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+        <div class="qr-container">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=JTVCJTIyUEMlMjIlMkMlN0IlMjJuYW1lJTIyJTNBJTIySm9jbyUyMEpvZXYlMjIlMkMlMjJvcmdhbml6YXRpb24lMjIlM0ElMjJKb2NvJTIwRXhwcmVzcyUyMFRheGklMjIlMkMlMjJ0aXRsZSUyMiUzQSUyMlByb2Zlc3Npb25hbCUyMERyaXZlciUyMiUyQyUyMnRlbCVMjIlM0ElMjIlMkIzODklMjAxMjIzJTIwMzQ2JTIwODg4JTIyJTJDJTIyZW1haWwlMjIlM0ElMjJqb2NvJTQwam9jby5jaCUyMiUyQyUyMnVybCUyMiUzQSUyMmh0dHBzJTNBJTJGJTJGaGloZWxsby5tZSUyRnAlMkZqb2NvdGF4aSUyMiU3RCU1RA==&format=png&margin=0&color=000&bgcolor=FED500" 
+                 alt="QR Code" width="180" height="180">
+            <p style="color: black; margin-top: 10px;">Scan for contact</p>
         </div>
         
-        <div class="qr-section">
-            <h3 class="qr-title">Scan to Save Contact</h3>
-            <div class="qr-code">
-                <!-- QR Code generated with your link -->
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://hihello.me/p/jocotaxi&format=png&margin=0&color=000&bgcolor=FED500" 
-                     alt="QR Code" width="160" height="160">
-            </div>
-            <p class="qr-instruction">Scan with phone camera to save contact instantly</p>
-            
-            <a href="https://www.walletpasses.io/passes/generate?data=eyJwYXNzVHlwZSI6ImdlbmVyaWMiLCJwYXJhbXMiOnsiZm9ybWF0VmVyc2lvbiI6MSwibG9nbyI6Imh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNTU2NzM2NjA5MTEzLWM0ZDIxMzUwY2Q0MD9peGxpYj1yYi00LjAuMCZpeGlkPU0xd3hNakEzZkh4N2JHOTNibVZrSUhOMWJXVnVkQ0JwYzNOMFpXUXVZMnhwYm1VdWIzWmxjdklIJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnE9ODAmdz0xMDAwJmNyb3A9dG9wIiwic3RyaXBlIjoiaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE1ODQ0NzE2MjY5NjMtMWUzYWM1M2Y1M2VkP2l4bGliPXJiLTQuMC4wJml4aWQ9TTF3eE1qQTNmSHg3Ykc5M2JtVmtJSE4xYldWdWRDQnBjM04wWldRdVkyeHBibVV1YjNabGN2SUgmYXV0bz1mb3JtYXQmZml0PWNyb3AmcT04MCZ3PTEwMDAmY3JvcD10b3AiLCJoZWFkZXIiOiJKb2NvIEV4cHJlc3MiLCJsYWJlbDEiOiJUYXhpIFNlcnZpY2UiLCJsYWJlbDIiOiIyNC83IFJlbGlhYmxlIFJpZGVzIiwicWxjb2RlIjoiaHR0cHM6Ly9oaWhlbGxvLm1lL3Avam9jb3RheGkiLCJwcmltYXJ5MSI6IkpvY28gSm9ldiIsInByaW1hcnkyIjoiKzM4OSAxMjIzIDM0NiA4ODgiLCJzZWNvbmRhcnkxIjoiUHJvZmVzc2lvbmFsIERyaXZlciIsInNlY29uZGFyeTIiOiJqb2NvQGpvY28uY2giLCJjb2xvciI6IiNGRUQ1MDAiLCJsYWJlbGNvbG9yIjoiIzAwMDAwMCIsInRleHRjb2xvciI6IiNGRkZGRkUiLCJ1cmwiOiJodHRwczovL2hpaGVsbG8ubWUvcC9qb2NvdGF4aSJ9fQ==" 
-               class="btn wallet-button">
-                <i class="fab fa-apple"></i> Add to Apple Wallet
-            </a>
+        <!-- КОПЧЕ ЗА WALLET СО ПРАВИЛЕН ПАТЕКА -->
+        <a href="joco-taxi.pkpass" class="wallet-button" id="walletBtn">
+            🍎 Add to Apple Wallet
+        </a>
+        
+        <!-- Алтернативен линк за директно преземање -->
+        <a href="https://drive.google.com/uc?export=download&id=1EXAMPLE" class="wallet-button" style="background: #333;">
+            ⬇️ Download .pkpass File
+        </a>
+        
+        <div class="instructions">
+            <strong>For Apple Wallet:</strong>
+            1. Click "Download .pkpass File"<br>
+            2. Open the downloaded file on iPhone<br>
+            3. iPhone will ask "Add to Wallet?"<br>
+            4. Click "Add"<br>
+            5. Done! Card is now in Wallet app
         </div>
     </div>
 
     <script>
-        // Add vibration effect on button clicks
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Check if vibration API is available
-                if (navigator.vibrate) {
-                    navigator.vibrate(50); // Vibrate for 50ms
-                }
-            });
-        });
+        // Провери дали корисникот е на iPhone
+        function isiPhone() {
+            return /iPhone|iPod/.test(navigator.userAgent);
+        }
         
-        // Auto-update year if needed
-        document.addEventListener('DOMContentLoaded', function() {
-            const yearElement = document.querySelector('.current-year');
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
+        // Ако е на iPhone, прикажи посебни инструкции
+        if (isiPhone()) {
+            document.getElementById('walletBtn').innerHTML = '📱 Tap to Add to Apple Wallet';
+            document.getElementById('walletBtn').style.background = '#007AFF';
+        }
+        
+        // Копче за генерирање на пасош онлајн
+        document.getElementById('walletBtn').addEventListener('click', function(e) {
+            if (!isiPhone()) {
+                e.preventDefault();
+                alert('For Apple Wallet:\n1. Open this page on iPhone\n2. Download the .pkpass file\n3. Open it on iPhone\n4. Click "Add to Wallet"');
             }
         });
     </script>
