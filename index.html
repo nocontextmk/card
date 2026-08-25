@@ -1,124 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joco Taxi Service</title>
+    <title>Der kleine Fuchs am Vierwaldstättersee</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
-        
+
         body {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
+            background-color: #f0ede7;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
             padding: 20px;
         }
-        
+
         .card {
-            background: #FED500;
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 400px;
-            margin: 0 auto;
-            border: 5px solid #000;
+            max-width: 760px;
+            width: 100%;
+            background: #ffffff;
+            padding: 50px 45px;
+            border-radius: 28px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e0d8cc;
         }
-        
+
         h1 {
-            color: #000;
-            font-size: 32px;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1e2b3a;
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #6b7a8a;
+            margin-bottom: 28px;
+            border-left: 4px solid #c0a88a;
+            padding-left: 18px;
+            font-style: italic;
+        }
+
+        .story {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #1e2b3a;
+        }
+
+        .story p {
+            margin-bottom: 16px;
+        }
+
+        .story strong {
+            color: #2a5c7a;
+            font-weight: 600;
+        }
+
+        .story em {
+            color: #5a6f7e;
+        }
+
+        .highlight-box {
+            background: #f3efe8;
+            padding: 18px 24px;
+            border-radius: 16px;
+            margin: 20px 0 20px 0;
+            border-left: 6px solid #b3927a;
+            font-style: italic;
+            color: #2c3e4e;
+        }
+
+        .dialog {
+            background: #f8f5f0;
+            padding: 14px 22px;
+            border-radius: 14px;
+            margin: 12px 0;
+            border: 1px solid #e8e0d4;
+        }
+
+        .dialog strong {
+            color: #1a4a6a;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dotted #dcd3c7;
+            margin: 32px 0 24px 0;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #6b6b6b;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            background: #e8e0d6;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #3a3a3a;
+        }
+
+        .schweiz {
+            background: #e6edf5;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #1a3a6b;
+        }
+
+        .fragen {
+            background: #faf8f5;
+            padding: 20px 24px;
+            border-radius: 18px;
+            margin-top: 28px;
+            border: 1px solid #e2dad0;
+        }
+
+        .fragen h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2a3f52;
             margin-bottom: 10px;
         }
-        
-        .subtitle {
-            color: #333;
-            margin-bottom: 20px;
+
+        .fragen ul {
+            list-style: none;
+            padding: 0;
         }
-        
-        .contact-info {
-            background: #000;
-            color: #FED500;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
+
+        .fragen li {
+            padding: 6px 0;
+            font-size: 1rem;
+            color: #2c3e4e;
+            border-bottom: 1px solid #ede8e0;
         }
-        
-        .contact-item {
-            margin: 15px 0;
-            font-size: 18px;
+
+        .fragen li:last-child {
+            border-bottom: none;
         }
-        
-        .qr-box {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            display: inline-block;
-            margin: 20px 0;
+
+        .fragen li::before {
+            content: "❓ ";
+            font-size: 1rem;
         }
-        
-        .wallet-button {
-            display: block;
-            background: #000;
-            color: #FED500;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 15px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-            border: 3px solid #FED500;
+
+        .emoji-line {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0 6px 0;
+            font-size: 1.6rem;
         }
-        
-        .instructions {
-            background: #333;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: left;
+
+        @media (max-width: 480px) {
+            .card { padding: 30px 20px; }
+            h1 { font-size: 1.6rem; }
+            .story { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>🚕 JOCO TAXI</h1>
-        <p class="subtitle">Fast • Safe • 24/7</p>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <strong>Joco Joev</strong><br>
-                Professional Driver
+        <h1>🦊 Der kleine Fuchs am Vierwaldstättersee</h1>
+        <div class="subhead">
+            Eine Herbstgeschichte aus Luzern · für die 3. Klasse
+        </div>
+
+        <div class="story">
+            <p>
+                Es war ein sonniger <strong>Herbsttag in Luzern</strong>. Der kleine Fuchs 
+                <strong>Niko</strong> lief durch den bunten Wald am <strong>Berg Pilatus</strong>. 
+                Die Blätter an den Bäumen waren gelb, rot und braun. Niko suchte nach leckeren Beeren.
+            </p>
+
+            <p>
+                Plötzlich sah er das blaue Wasser vom <strong>Vierwaldstättersee</strong>. 
+                Am Ufer sass eine kleine Ente. Sie schaute traurig ins Wasser.
+            </p>
+
+            <div class="dialog">
+                <p>
+                    <strong>„Hallo! Warum bist du traurig?“</strong>, fragte Niko freundlich.
+                </p>
+                <p style="margin-top: 6px;">
+                    Die Ente blickte auf und sagte: <strong>„Ich habe meinen bunten Stein verloren. 
+                    Er liegt dort drüben im Wasser, aber ich komme nicht heran.“</strong>
+                </p>
             </div>
-            <div class="contact-item">
-                📞 +389 1223 346 888<br>
-                ✉️ joco@joco.ch
+
+            <p>
+                Niko überlegte nicht lange. Er ging vorsichtig ins kühle Wasser und holte den 
+                glänzenden Stein mit seiner Schnauze heraus. Er gab ihn der Ente.
+            </p>
+
+            <div class="highlight-box">
+                „Vielen Dank! Du bist ein echter Freund!“, freute sich die Ente.
+            </div>
+
+            <p>
+                Zusammen sassen die zwei neuen Freunde am See und schauten den Schiffen zu. 
+                Niko war stolz, weil er geholfen hatte. Es war ein wunderbarer Tag.
+            </p>
+
+            <div class="emoji-line">
+                🍂 🦊 🦆 🏔️ ⛵ ✨
             </div>
         </div>
-        
-        <div class="qr-box">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=CONTACTINFO" 
-                 alt="Scan to save contact" width="200" height="200">
-            <p style="color: black; margin-top: 10px;">Scan QR to save contact</p>
+
+        <hr>
+
+        <div class="meta">
+            <span class="badge">📘 3. Klasse</span>
+            <span class="schweiz">🇨🇭 Luzern · Vierwaldstättersee</span>
+            <span>📖 Freundschaftsgeschichte</span>
         </div>
-        
-        <!-- ВАЖНО: Ова е копчето за Apple Wallet -->
-        <a href="https://walleto.joco-taxi.com" class="wallet-button">
-            🍎 Add to Apple Wallet
-        </a>
-        
-        <div class="instructions">
-            <h3>📱 How to add to Apple Wallet:</h3>
-            <ol>
-                <li>Click the yellow "Add to Apple Wallet" button</li>
-                <li>iPhone will open a new page</li>
-                <li>Click "Download .pkpass file"</li>
-                <li>iPhone will ask: "Add to Wallet?"</li>
-                <li>Click "Add"</li>
-                <li>Done! Card is now in your Wallet app</li>
-            </ol>
+
+        <!-- Fragen zum Verständnis -->
+        <div class="fragen">
+            <h3>🧠 Fragen zum Nachdenken</h3>
+            <ul>
+                <li>Wie heisst der kleine Fuchs in der Geschichte?</li>
+                <li>Wo spielt die Geschichte? (Ort und See)</li>
+                <li>Warum war die Ente traurig?</li>
+                <li>Wie hat Niko der Ente geholfen?</li>
+                <li>Warum war Niko am Ende stolz?</li>
+            </ul>
+        </div>
+
+        <!-- Zusätzliche Aktivität -->
+        <div style="margin-top: 22px; background: #f0f4f0; padding: 16px 22px; border-radius: 16px; border: 1px solid #dce4d8;">
+            <p style="font-size: 0.95rem; color: #2a3f3a; margin: 0;">
+                🎨 <strong>Kreativaufgabe:</strong> Male den bunten Stein, den Niko gefunden hat! 
+                Welche Farben hat er? Zeichne ihn in dein Heft.
+            </p>
+        </div>
+
+        <!-- Fusszeile mit Schweizer Flair -->
+        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid #e8e0d6; font-size: 0.85rem; color: #999; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <span>🇨🇭 Grüezi!</span>
+            <span>🏔️ Berg Pilatus</span>
+            <span>🦊 Niko &amp; die Ente</span>
+            <span>❤️ für neugierige Kinder</span>
         </div>
     </div>
 </body>
