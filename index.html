@@ -23,17 +23,17 @@
         }
 
         .card {
-            max-width: 760px;
+            max-width: 700px;
             width: 100%;
             background: #ffffff;
-            padding: 50px 45px;
+            padding: 45px 40px;
             border-radius: 28px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.05);
             border: 1px solid #e0d8cc;
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 500;
             letter-spacing: -0.02em;
             color: #1e2b3a;
@@ -42,22 +42,22 @@
         }
 
         .subhead {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #6b7a8a;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
             border-left: 4px solid #c0a88a;
-            padding-left: 18px;
+            padding-left: 16px;
             font-style: italic;
         }
 
         .story {
-            font-size: 1.15rem;
-            line-height: 1.9;
+            font-size: 1.2rem;
+            line-height: 2;
             color: #1e2b3a;
         }
 
         .story p {
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .story strong {
@@ -65,36 +65,36 @@
             font-weight: 600;
         }
 
-        .story em {
-            color: #5a6f7e;
-        }
-
-        .highlight-box {
-            background: #f3efe8;
-            padding: 18px 24px;
-            border-radius: 16px;
-            margin: 20px 0 20px 0;
-            border-left: 6px solid #b3927a;
-            font-style: italic;
-            color: #2c3e4e;
-        }
-
         .dialog {
             background: #f8f5f0;
-            padding: 14px 22px;
+            padding: 14px 20px;
             border-radius: 14px;
-            margin: 12px 0;
+            margin: 14px 0;
             border: 1px solid #e8e0d4;
+            font-size: 1.15rem;
+            line-height: 1.9;
         }
 
         .dialog strong {
             color: #1a4a6a;
         }
 
+        .highlight-box {
+            background: #f3efe8;
+            padding: 16px 22px;
+            border-radius: 16px;
+            margin: 18px 0;
+            border-left: 6px solid #b3927a;
+            font-style: italic;
+            color: #2c3e4e;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
         hr {
             border: none;
             border-top: 2px dotted #dcd3c7;
-            margin: 32px 0 24px 0;
+            margin: 30px 0 22px 0;
         }
 
         .meta {
@@ -127,7 +127,7 @@
             background: #faf8f5;
             padding: 20px 24px;
             border-radius: 18px;
-            margin-top: 28px;
+            margin-top: 26px;
             border: 1px solid #e2dad0;
         }
 
@@ -156,7 +156,6 @@
 
         .fragen li::before {
             content: "❓ ";
-            font-size: 1rem;
         }
 
         .emoji-line {
@@ -164,58 +163,59 @@
             gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 10px 0 6px 0;
+            padding: 12px 0 4px 0;
             font-size: 1.6rem;
         }
 
         @media (max-width: 480px) {
             .card { padding: 30px 20px; }
-            h1 { font-size: 1.6rem; }
-            .story { font-size: 1rem; }
+            h1 { font-size: 1.5rem; }
+            .story { font-size: 1.05rem; }
+            .dialog, .highlight-box { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>🦊 Der kleine Fuchs am Vierwaldstättersee</h1>
+        <h1>🦊 Der kleine Fuchs am See</h1>
         <div class="subhead">
             Eine Herbstgeschichte aus Luzern · für die 3. Klasse
         </div>
 
         <div class="story">
             <p>
-                Es war ein sonniger <strong>Herbsttag in Luzern</strong>. Der kleine Fuchs 
-                <strong>Niko</strong> lief durch den bunten Wald am <strong>Berg Pilatus</strong>. 
-                Die Blätter an den Bäumen waren gelb, rot und braun. Niko suchte nach leckeren Beeren.
+                Es war ein schöner <strong>Herbsttag in Luzern</strong>. 
+                Der kleine Fuchs <strong>Niko</strong> lief durch den Wald am <strong>Pilatus</strong>. 
+                Die Blätter waren gelb, rot und braun. Niko suchte Beeren.
             </p>
 
             <p>
-                Plötzlich sah er das blaue Wasser vom <strong>Vierwaldstättersee</strong>. 
-                Am Ufer sass eine kleine Ente. Sie schaute traurig ins Wasser.
+                Plötzlich sah er den <strong>Vierwaldstättersee</strong>. 
+                Am Ufer sass eine Ente. Sie war traurig.
             </p>
 
             <div class="dialog">
                 <p>
-                    <strong>„Hallo! Warum bist du traurig?“</strong>, fragte Niko freundlich.
+                    <strong>„Hallo! Warum bist du traurig?“</strong>, fragte Niko.
                 </p>
                 <p style="margin-top: 6px;">
-                    Die Ente blickte auf und sagte: <strong>„Ich habe meinen bunten Stein verloren. 
-                    Er liegt dort drüben im Wasser, aber ich komme nicht heran.“</strong>
+                    <strong>„Ich habe meinen bunten Stein verloren“</strong>, sagte die Ente. 
+                    <strong>„Er liegt im Wasser. Ich komme nicht hin.“</strong>
                 </p>
             </div>
 
             <p>
-                Niko überlegte nicht lange. Er ging vorsichtig ins kühle Wasser und holte den 
-                glänzenden Stein mit seiner Schnauze heraus. Er gab ihn der Ente.
+                Niko half sofort. Er ging ins Wasser und holte den Stein heraus. 
+                Er gab ihn der Ente.
             </p>
 
             <div class="highlight-box">
-                „Vielen Dank! Du bist ein echter Freund!“, freute sich die Ente.
+                „Danke! Du bist ein echter Freund!“, freute sich die Ente.
             </div>
 
             <p>
-                Zusammen sassen die zwei neuen Freunde am See und schauten den Schiffen zu. 
-                Niko war stolz, weil er geholfen hatte. Es war ein wunderbarer Tag.
+                Dann sassen sie zusammen am See. Sie sahen die Schiffe. 
+                Niko war glücklich. Es war ein schöner Tag.
             </p>
 
             <div class="emoji-line">
@@ -227,36 +227,30 @@
 
         <div class="meta">
             <span class="badge">📘 3. Klasse</span>
-            <span class="schweiz">🇨🇭 Luzern · Vierwaldstättersee</span>
-            <span>📖 Freundschaftsgeschichte</span>
+            <span class="schweiz">🇨🇭 Luzern</span>
+            <span>📖 Freundschaft</span>
         </div>
 
-        <!-- Fragen zum Verständnis -->
         <div class="fragen">
-            <h3>🧠 Fragen zum Nachdenken</h3>
+            <h3>🧠 Fragen</h3>
             <ul>
-                <li>Wie heisst der kleine Fuchs in der Geschichte?</li>
-                <li>Wo spielt die Geschichte? (Ort und See)</li>
+                <li>Wie heisst der Fuchs?</li>
+                <li>Wo spielt die Geschichte?</li>
                 <li>Warum war die Ente traurig?</li>
-                <li>Wie hat Niko der Ente geholfen?</li>
-                <li>Warum war Niko am Ende stolz?</li>
+                <li>Wie half Niko der Ente?</li>
             </ul>
         </div>
 
-        <!-- Zusätzliche Aktivität -->
-        <div style="margin-top: 22px; background: #f0f4f0; padding: 16px 22px; border-radius: 16px; border: 1px solid #dce4d8;">
-            <p style="font-size: 0.95rem; color: #2a3f3a; margin: 0;">
-                🎨 <strong>Kreativaufgabe:</strong> Male den bunten Stein, den Niko gefunden hat! 
-                Welche Farben hat er? Zeichne ihn in dein Heft.
+        <div style="margin-top: 20px; background: #f0f4f0; padding: 16px 22px; border-radius: 16px; border: 1px solid #dce4d8;">
+            <p style="font-size: 0.95rem; color: #2a3f3a; margin: 0; line-height: 1.7;">
+                🎨 <strong>Male den bunten Stein!</strong> Welche Farben hat er?
             </p>
         </div>
 
-        <!-- Fusszeile mit Schweizer Flair -->
-        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid #e8e0d6; font-size: 0.85rem; color: #999; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div style="margin-top: 22px; padding-top: 16px; border-top: 1px solid #e8e0d6; font-size: 0.85rem; color: #999; text-align: center; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;">
             <span>🇨🇭 Grüezi!</span>
-            <span>🏔️ Berg Pilatus</span>
-            <span>🦊 Niko &amp; die Ente</span>
-            <span>❤️ für neugierige Kinder</span>
+            <span>🦊 Niko</span>
+            <span>❤️ für Kinder</span>
         </div>
     </div>
 </body>
